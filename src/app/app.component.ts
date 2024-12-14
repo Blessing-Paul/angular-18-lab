@@ -12,4 +12,5 @@ import { HomeComponent } from './home/home.component';
 })
 export class AppComponent {
   title = 'standaloneApp';
+  subTitle = 'angular 18 tutorial';
 }
