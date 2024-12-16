@@ -17,6 +17,7 @@ export class AppComponent {
   subTitle = 'angular 18 tutorial';
   todayDate = new Date();
   salary = 1000;
-  person = {"name": "Blessing"}
+  _obj = {"name": "Blessing"}
   number = 2;
+  isDisabled = true;
 }
