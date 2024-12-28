@@ -5,18 +5,17 @@ import { ActivatedRoute } from '@angular/router';
   selector: 'app-about',
   imports: [],
   templateUrl: './about.component.html',
-  styleUrl: './about.component.css'
+  styleUrl: './about.component.css',
 })
 export class AboutComponent implements OnInit {
+  routerValue: any;
+  subMenu: any;
 
- routerValue:any;
-
- constructor(private route:ActivatedRoute){
-
- }
+  constructor(private route: ActivatedRoute) {}
   ngOnInit(): void {
     this.routerValue = this.route.snapshot.paramMap.get('id');
+    this.subMenu = this.route.snapshot.paramMap.get('submenu');
     console.log(this.routerValue);
+    console.log(this.subMenu);
   }
- 
 }
