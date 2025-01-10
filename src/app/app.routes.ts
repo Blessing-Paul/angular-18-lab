@@ -8,6 +8,7 @@ import { CustomerAddComponent } from './pages/customer-add/customer-add.componen
 import { FallbackComponent } from './fallback/fallback.component';
 import { authGuard } from './Guards/auth.guard';
 import { childauthGuard } from './Guards/childauth.guard';
+import { authDeactivateGuard } from './Guards/auth-deactivate.guard';
 
 export const routes: Routes = [
   {
@@ -35,6 +36,7 @@ export const routes: Routes = [
     component: CustomerComponent,
     canActivate:[authGuard],
     canActivateChild:[childauthGuard],
+    canDeactivate: [authDeactivateGuard],
     children: [
       {
         path: 'add-customer',
