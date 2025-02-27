@@ -14,7 +14,7 @@ import { ReversePipe } from '../custom/reverse.pipe';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  title = 'standaloneApp';
+   title = 'standaloneApp';
   subTitle = 'angular 18 tutorial';
   todayDate = new Date();
   salary = 1000;

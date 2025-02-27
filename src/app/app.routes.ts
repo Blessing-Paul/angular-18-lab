@@ -20,12 +20,16 @@ export const routes: Routes = [
     component: AboutComponent,
   },
   {
+    path: 'about/:id',
+    component: AboutComponent,
+  },
+  {
     path: 'about/:submenu/:id',
     component: AboutComponent,
   },
   {
     path: 'contact',
-    component: ContactComponent,
+    loadComponent: () =>import('./pages/contact/contact.component').then(m => m.ContactComponent)
   },
   {
     path: 'support',
@@ -36,7 +40,6 @@ export const routes: Routes = [
     component: CustomerComponent,
     canActivate:[authGuard],
     canActivateChild:[childauthGuard],
-    canDeactivate: [authDeactivateGuard],
     children: [
       {
         path: 'add-customer',
