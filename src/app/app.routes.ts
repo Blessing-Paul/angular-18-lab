@@ -40,6 +40,7 @@ export const routes: Routes = [
     component: CustomerComponent,
     canActivate:[authGuard],
     canActivateChild:[childauthGuard],
+    canDeactivate: [authDeactivateGuard],
     children: [
       {
         path: 'add-customer',
