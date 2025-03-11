@@ -12,11 +12,34 @@
         <span> {{number | percent}} </span> <br>
         <span> {{title | reverse}} </span> <br>
         <input type="checkbox" [disabled]="isDisabled" [checked]="isDisabled"> <br>
-         <input type="text" (keyup)="updateTitle($event)"> <br> <br>
+        <input type="text" (keyup)="updateTitle($event)"> <br> <br>
         <input type="text" [(ngModel)]="title"> <br> <br>
-        <button (click)="changeTitle()">Click Here</button>
+        <button (click)="changeTitle()">Click Here</button> <br> <br>
+        <div [ngClass]="{'active': isDisabled, 'inactive': !isDisabled}">
+            <h2>Attribute Directive</h2>
+        </div>
+        <div *ngIf="itShows">
+            <div>
+                <h2 [ngStyle]="{'color': _color, 'font-size': _font}">Attribute Directive</h2>
+            </div>
+        </div>
+        <div *ngFor="let item of ticketInfo" [ngStyle]="{'background-color': item.color, 'color':'white' }">
+            <!--{{item|json}}-->
+            <span>Id: {{item.id}}</span>
+            <h2> {{item.name | uppercase}} </h2>
+        </div>
+
+        <div [ngSwitch]="_view" >
+            <div *ngSwitchCase="'home'">
+                <h2>This is the home view</h2>
+            </div>
+            <div *ngSwitchCase="'about'">
+                <h2>This is the about view</h2>
+            </div>
+            <div *ngSwitchDefault>
+                <h2>This is the default view</h2>
+            </div>
+        </div>
     </mat-card-content>
-    <!-- <mat-card-actions>
-      <button mat-button>Learn More</button>
-    </mat-card-actions> -->
+
 </mat-card>

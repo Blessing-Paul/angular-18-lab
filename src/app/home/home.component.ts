@@ -6,21 +6,39 @@ import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 import { ReversePipe } from '../custom/reverse.pipe';
 
-
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, MatButtonModule, MatCardModule,FormsModule, ReversePipe],
+  imports: [
+    CommonModule,
+    MatButtonModule,
+    MatCardModule,
+    FormsModule,
+    ReversePipe,
+  ],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrl: './home.component.css',
 })
 export class HomeComponent {
-   title = 'standaloneApp';
+  title = 'standaloneApp';
   subTitle = 'angular 18 tutorial';
   todayDate = new Date();
   salary = 1000;
   _obj = { name: 'Blessing' };
   number = 2;
-  isDisabled = true;
+  isDisabled = false;
+  _class = 'active';
+  _color = 'indigo';
+  _font = '24';
+
+  itShows = false;
+
+  ticketInfo = [
+    { id: '1', name: 'angular', color: 'green' },
+    { id: '2', name: 'react', color: 'red' },
+    { id: '3', name: 'vuejs', color: 'blue' },
+  ];
+
+  _view = 'home';
 
   changeTitle() {
     this.title = 'Stand Alone Application in Angular 18';
