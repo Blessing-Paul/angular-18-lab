@@ -9,6 +9,7 @@ import { FallbackComponent } from './fallback/fallback.component';
 import { authGuard } from './Guards/auth.guard';
 import { childauthGuard } from './Guards/childauth.guard';
 import { authDeactivateGuard } from './Guards/auth-deactivate.guard';
+import { LoginComponent } from './pages/login/login.component';
 
 export const routes: Routes = [
   {
@@ -29,7 +30,14 @@ export const routes: Routes = [
   },
   {
     path: 'contact',
-    loadComponent: () =>import('./pages/contact/contact.component').then(m => m.ContactComponent)
+    loadComponent: () =>
+      import('./pages/contact/contact.component').then(
+        (m) => m.ContactComponent
+      ),
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
   },
   {
     path: 'support',
@@ -38,8 +46,8 @@ export const routes: Routes = [
   {
     path: 'customer',
     component: CustomerComponent,
-    canActivate:[authGuard],
-    canActivateChild:[childauthGuard],
+    canActivate: [authGuard],
+    canActivateChild: [childauthGuard],
     canDeactivate: [authDeactivateGuard],
     children: [
       {
@@ -48,12 +56,12 @@ export const routes: Routes = [
       },
       {
         path: 'edit-customer/:id',
-        component: CustomerAddComponent
-      }
+        component: CustomerAddComponent,
+      },
     ],
   },
   {
     path: '**',
-    component: FallbackComponent
+    component: FallbackComponent,
   },
 ];
