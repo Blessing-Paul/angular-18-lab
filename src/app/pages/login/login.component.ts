@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { LoginModel } from '../../model/LoginModel';
 import { CommonModule } from '@angular/common';
 import { MasterService } from '../../service/master.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -18,6 +18,7 @@ import { Router } from '@angular/router';
     MatButtonModule,
     FormsModule,
     CommonModule,
+    RouterLink
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
