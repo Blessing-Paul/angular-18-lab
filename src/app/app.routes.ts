@@ -19,18 +19,22 @@ export const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+    canActivate: [authGuard],
   },
   {
     path: 'about',
     component: AboutComponent,
+    canActivate: [authGuard],
   },
   {
     path: 'about/:id',
     component: AboutComponent,
+    canActivate: [authGuard],
   },
   {
     path: 'about/:submenu/:id',
     component: AboutComponent,
+    canActivate: [authGuard],
   },
   {
     path: 'contact',
@@ -38,6 +42,7 @@ export const routes: Routes = [
       import('./pages/contact/contact.component').then(
         (m) => m.ContactComponent
       ),
+    canActivate: [authGuard],
   },
   {
     path: 'login',
@@ -46,6 +51,7 @@ export const routes: Routes = [
   {
     path: 'support',
     component: SupportComponent,
+    canActivate: [authGuard],
   },
   {
     path: 'customer',

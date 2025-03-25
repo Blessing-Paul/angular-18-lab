@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -22,8 +22,12 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   constructor(private loginService: MasterService, private router: Router) {}
+
+  ngOnInit(): void {
+    localStorage.clear();
+  }
 
   _loginData: LoginModel = {
     username: '',
@@ -37,7 +41,8 @@ export class LoginComponent {
         if (response.length > 0) {
           //reroute to what page to be displayed since this is a login page
           //To redirect you need to inject router in the constructor function
-          this.router.navigateByUrl('');
+          localStorage.setItem('username', this._loginData.username);
+          this.router.navigateByUrl('/home');
         } else {
           alert('Invalid Credentials');
         }
