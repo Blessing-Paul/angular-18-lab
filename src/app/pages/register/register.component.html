@@ -1,4 +1,4 @@
-<form class="example-form" (ngSubmit)="proceedRegister()">
+<form class="register-form" [formGroup]="registerForm" (ngSubmit)="proceedRegister()">
     <mat-card>
         <mat-card-header>
             <h2>New Registration</h2>
@@ -6,8 +6,41 @@
         <mat-card-content>
             <mat-form-field class="example-full-width">
                 <mat-label>Username</mat-label>
-                <input matInput type="text" placeholder="Username">
+                <input matInput type="text" placeholder="Username" formControlName="username">
             </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Name</mat-label>
+                <input matInput type="text" placeholder="Name" formControlName="name">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Email</mat-label>
+                <input matInput type="text" placeholder="Email" formControlName="email">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Role</mat-label>
+                <mat-select>
+                    @for (item of roles; track item) {
+                    <mat-option [value]="item.value">{{item.viewValue}}</mat-option>
+                    }
+                </mat-select>
+            </mat-form-field>
+
+            <div>
+                <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button color="primary" value="m">Male</mat-radio-button>
+                    <mat-radio-button value="f">Female</mat-radio-button>
+                </mat-radio-group>
+            </div>
+
+            <div>
+                <section class="example-section">
+                    <mat-checkbox color="primary" class="example-margin">Terms and Conditions Agreement</mat-checkbox>
+                </section>
+            </div>
+
 
         </mat-card-content>
         <mat-card-actions>

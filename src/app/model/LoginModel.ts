@@ -10,3 +10,8 @@ export interface users {
   password: string;
   role: string;
 }
+
+export interface Roles {
+  value: string;
+  viewValue: string;
+}
