@@ -11,6 +11,7 @@ import { childauthGuard } from './Guards/childauth.guard';
 import { authDeactivateGuard } from './Guards/auth-deactivate.guard';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { ProductComponent } from './pages/product/product.component';
 
 export const routes: Routes = [
   {
@@ -66,6 +67,10 @@ export const routes: Routes = [
         component: CustomerAddComponent,
       },
     ],
+  },
+  {
+    path: 'product',
+    component: ProductComponent,
   },
   {
     path: 'login',
