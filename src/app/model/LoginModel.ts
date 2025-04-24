@@ -6,9 +6,12 @@ export interface LoginModel {
 // The Below Interface is for the login response on successful login
 export interface users {
   id: string;
-  username: string;
+  name: string;
+  email: string
   password: string;
   role: string;
+  gender: string
+
 }
 
 export interface Roles {

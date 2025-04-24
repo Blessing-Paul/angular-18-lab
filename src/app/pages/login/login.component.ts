@@ -18,7 +18,7 @@ import { Router, RouterLink } from '@angular/router';
     MatButtonModule,
     FormsModule,
     CommonModule,
-    RouterLink
+    RouterLink,
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
 
   proceedToLogin(form: any) {
     if (form.valid) {
-      this.loginService.login(this._loginData).subscribe((item) => {
+      this.loginService.proceedLogin(this._loginData).subscribe((item) => {
         let response = item;
         if (response.length > 0) {
           //reroute to what page to be displayed since this is a login page

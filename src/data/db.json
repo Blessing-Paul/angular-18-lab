@@ -1,16 +1,32 @@
 {
-    "users":[
-        {
-            "id": "admin", 
-            "name": "Admin User",
-            "password": "12345",
-            "role": "admin"
-        },
-        {
-            "id": "suser", 
-            "name": "Sales User",
-            "password": "test",
-            "role": "salesman"
-        }
-    ]
+  "users": [
+    {
+      "id": "admin",
+      "name": "Admin User",
+      "password": "12345",
+      "role": "admin"
+    },
+    {
+      "id": "suser",
+      "name": "Sales User",
+      "password": "test",
+      "role": "salesman"
+    },
+    {
+      "id": "admin",
+      "name": "Blessing ",
+      "email": "klassiquepaul@gmail.com",
+      "password": "12345",
+      "role": "salesman",
+      "gender": "m"
+    },
+    {
+      "id": "ofodic@gmail.com",
+      "name": "Ofodi Chirstabel",
+      "email": "ofodic@gmail.com",
+      "password": "123456",
+      "role": "manager",
+      "gender": "m"
+    }
+  ]
 }
