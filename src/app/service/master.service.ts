@@ -10,6 +10,8 @@ export class MasterService {
 
   proceedLogin(data: LoginModel) {
     return this.http.get<users[]>('http://localhost:3000/users?id=' +data.username +'&&password=' +data.password
+    //mock url for understanding how the parameters was passed in the above get request
+    //http://localhost:3000/users?id=admin&&password=12345
     );
   }
 
