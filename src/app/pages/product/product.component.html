@@ -1,1 +1,64 @@
-<p>product works!</p>
+<mat-card>
+    <mat-card-header>
+        <h2>Product Listing</h2>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="mat-elevation-z8">
+            <table mat-table [dataSource]="dataSource" matSort>
+
+                <!-- ID Column -->
+                <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+                    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+                    <td mat-cell *matCellDef="let element"> {{element.name| uppercase}} </td>
+                </ng-container>
+
+                <!-- Description Column -->
+                <ng-container matColumnDef="description">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Description </th>
+                    <td mat-cell *matCellDef="let element"> {{element.description| titlecase}} </td>
+                </ng-container>
+
+                <!-- Price Column -->
+                <ng-container matColumnDef="price">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Price </th>
+                    <td mat-cell *matCellDef="let element"> {{element.price | currency:'NGN':'symbol' }} </td>
+                </ng-container>
+
+                <!-- Action Column -->
+                <ng-container matColumnDef="status">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
+                    <td mat-cell *matCellDef="let element"> {{element.status === true?'Available': 'Unavailable' }}
+                    </td>
+                </ng-container>
+
+                <!-- Action Column -->
+                <ng-container matColumnDef="actions">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+                    <td mat-cell *matCellDef="let element">
+                        <button mat-raised-button color="primary">Edit</button>
+                        <button mat-raised-button color="accent">Delete</button>
+                    </td>
+                </ng-container>
+
+                <tr class="table-header" mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!--Row Shown when there is no matching data-->
+                <tr class="mat-row" *matNoDataRow>
+                    <td class="mat-cell" colspan="6">Data not available</td>
+                </tr>
+            </table>
+
+            <mat-paginator [pageSizeOptions]="[5, 10, 25, 50, 100]" showFirstLastButtons
+                aria-label="Select page of periodic elements">
+            </mat-paginator>
+        </div>
+
+    </mat-card-content>
+</mat-card>

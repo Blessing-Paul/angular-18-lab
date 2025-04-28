@@ -31,6 +31,12 @@
   ],
 
   "product" : [
-
+    {
+      "id": 1,
+      "name": "Cricket Bat",
+      "description": "Metal golf ball with silicon handle",
+      "price": 2000,
+      "status": true
+    }
   ]
 }
