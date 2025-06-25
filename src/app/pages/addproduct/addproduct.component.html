@@ -1,0 +1,42 @@
+<form class="register-form" [formGroup]="productForm" (ngSubmit)="proceedSave()">
+    <mat-card>
+        <mat-card-header>
+            <h2> {{_dialogdata.title}} </h2>
+        </mat-card-header>
+        <mat-card-content>
+            @if (_dialogdata.id != 0) {
+            <mat-form-field class="example-full-width">
+                <mat-label>Id</mat-label>
+                <input matInput type="text" formControlName="id">
+            </mat-form-field>
+            }
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Name</mat-label>
+                <input matInput type="text" formControlName="name">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Description</mat-label>
+                <textarea matInput formControlName="description"></textarea>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Price</mat-label>
+                <input matInput type="number" formControlName="price">
+            </mat-form-field>
+
+            <div>
+                <section class="example-section">
+                    <mat-checkbox color="primary" class="example-margin" formControlName="status">Status</mat-checkbox>
+                </section>
+            </div>
+
+
+        </mat-card-content>
+        <mat-card-actions>
+            <button (click)="closeModal()" type="button" mat-raised-button color="accent">Cancel</button>
+            <button type="submit" mat-raised-button color="primary">Save</button>
+        </mat-card-actions>
+    </mat-card>
+</form>

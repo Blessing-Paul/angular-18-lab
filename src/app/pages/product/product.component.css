@@ -3,6 +3,17 @@
   color: white;
 }
 
-.mdc-button{
+.mdc-button {
   margin: 2px;
+}
+
+mat-card-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* styles.css or component CSS */
+.mat-table-responsive {
+  width: 100%;
+  overflow-x: auto;
 }

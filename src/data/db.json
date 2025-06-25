@@ -29,14 +29,34 @@
       "gender": "m"
     }
   ],
-
-  "product" : [
+  "product": [
     {
-      "id": 1,
-      "name": "Cricket Bat",
-      "description": "Metal golf ball with silicon handle",
-      "price": 2000,
+      "id": "1",
+      "name": "Laptop",
+      "description": "Powerful gaming laptop",
+      "price": 1200,
       "status": true
+    },
+    {
+      "id": "2",
+      "name": "Mouse",
+      "description": "Wireless Bluetooth Mouse",
+      "price": 1000,
+      "status": true
+    },
+    {
+      "id": "4",
+      "name": "MousePad",
+      "description": "Mouse pad with excel shortcuts",
+      "price": 1000,
+      "status": false
+    },
+    {
+      "name": "Laptop Battery",
+      "description": "Powerful battery replacement for gaming laptops",
+      "price": 1000,
+      "status": true,
+      "id": "bbe2"
     }
   ]
 }
