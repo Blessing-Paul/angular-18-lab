@@ -1,0 +1,7 @@
+:host {
+  padding: 20px;
+  background-color: orangered;
+  height: calc(100vh - 56px);
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
