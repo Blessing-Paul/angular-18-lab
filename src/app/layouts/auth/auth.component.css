@@ -1,0 +1,9 @@
+:host {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.image-column {
+  background-color: brown;
+  height: 100vh;
+}

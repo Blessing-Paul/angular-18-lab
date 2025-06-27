@@ -1,8 +1,24 @@
-<app-header></app-header>
-<div class="d-flex w-100">
-    <app-sidebar class="flex-shrink-0" style="width: 15%;"></app-sidebar>
+<div class="wrapper">
+    <!-- Desktop Sidebar -->
+    <app-sidebar *ngIf="!isMobile" [collapsed]="isSidebarCollapsed" [isOverlay]="false">
+    </app-sidebar>
 
-    <div class="flex-grow-1 content" style="width: 70%;">
-        <router-outlet></router-outlet>
+    <!-- Mobile/Tablet Sidebar (always in DOM when active) -->
+    <app-sidebar class="sidebar overlay" *ngIf="isMobile && isSidebarVisible" [ngClass]="{ show: showSidebarOverlay }"
+        [isOverlay]="true" [show]="showSidebarOverlay" (closeSidebar)="toggleSidebar()">
+    </app-sidebar>
+
+    <!-- Backdrop -->
+    <!-- <div class="sidebar-backdrop" *ngIf="isMobile && showSidebarOverlay" (click)="toggleSidebar()">
+    </div> -->
+
+
+    <!-- Main Content Area -->
+    <div class="main-area">
+        <app-header (toggleSidebar)="toggleSidebar()"></app-header>
+
+        <div class="content">
+            <router-outlet></router-outlet>
+        </div>
     </div>
 </div>

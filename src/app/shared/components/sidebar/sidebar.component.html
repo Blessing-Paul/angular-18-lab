@@ -1,1 +1,24 @@
-<p>sidebar works!</p>
+<div class="sidebar" [ngClass]="{
+    collapsed: collapsed && !isOverlay,
+    overlay: isOverlay,
+    show: isOverlay && show
+  }">
+
+    <!-- Close button for mobile -->
+    <!-- <button *ngIf="isOverlay" class="btn btn-outline-danger d-lg-none mb-3 ms-auto me-2 mt-2"
+        (click)="closeSidebar.emit()">
+        &times;
+    </button> -->
+    <button class="btn btn-sm btn-danger close-btn d-lg-none" (click)="closeSidebar.emit()"
+        style="position: absolute; top: 10px; right: 10px; z-index: 1200;">
+        &times;
+    </button>
+
+    <nav class="p-3">
+        <ul class="list-unstyled">
+            <li><a routerLink="/" routerLinkActive="active">Dashboard</a></li>
+            <li><a routerLink="/posts" routerLinkActive="active">Posts</a></li>
+            <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
+        </ul>
+    </nav>
+</div>

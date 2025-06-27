@@ -1,7 +1,63 @@
-:host {
-  padding: 20px;
-  background-color: orangered;
-  height: calc(100vh - 56px);
-  overflow-x: hidden;
-  overflow-y: scroll;
+/* Root sidebar styles */
+.sidebar {
+  width: 250px;
+  background: #f8f9fa;
+  height: 100vh;
+  transition: all 0.3s ease;
+  z-index: 1030;
+  position: relative;
+}
+
+/* Collapsed sidebar on desktop */
+.sidebar.collapsed {
+  width: 0;
+  overflow: hidden;
+}
+
+/* Mobile/Tablet overlay sidebar */
+.sidebar.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+  background: #fff;
+  z-index: 1100;
+  width: 250px;
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* Show mobile overlay with animation */
+.sidebar.overlay.show {
+  transform: translateX(0);
+  pointer-events: auto;
+  opacity: 1;
+}
+
+/* Navigation styling */
+nav ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+nav li a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #333;
+  text-decoration: none;
+}
+
+nav li a:hover {
+  background: #e2e6ea;
+}
+
+/* Optional: Close button positioning */
+button.btn-outline-danger {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1200;
 }
